@@ -47,20 +47,19 @@ class _HighTaskScreenState extends State<HighTaskScreen> {
   }
 
   void _deleteTask(id) async {
-    List<TaskModel> tasks =[];
-    final allTasks =PreferenceManger().getString("tasks");
+    List<TaskModel> tasks = [];
+    final allTasks = PreferenceManger().getString("tasks");
     if (allTasks != null) {
       final tasksDecode = jsonDecode(allTasks) as List<dynamic>;
-      tasks= tasksDecode.map((e)=> TaskModel.formJson(e)).toList();
-      tasks.removeWhere((el)=>el.id == id);
+      tasks = tasksDecode.map((e) => TaskModel.formJson(e)).toList();
+      tasks.removeWhere((el) => el.id == id);
       setState(() {
-        hightask.removeWhere((task)=>task.id == id);
+        hightask.removeWhere((task) => task.id == id);
       });
-      final updateTask = tasks.map((elemnet)=>elemnet.toJson()).toList();
+      final updateTask = tasks.map((elemnet) => elemnet.toJson()).toList();
       PreferenceManger().setString("tasks", jsonEncode(updateTask));
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -71,36 +70,46 @@ class _HighTaskScreenState extends State<HighTaskScreen> {
         child: Center(
           child: is_loading
               ? CircularProgressIndicator(color: Colors.white)
-              : TasksListWiget(
-                  tasks: hightask,
-                  OnTap: (bool? value, int? index) async {
-                    setState(() {
-                      hightask[index!].isDone = value ?? false;
-                    });
-                    final updatedTask = hightask
-                        .map((element) => element.toJson())
-                        .toList();
-                    final allData = PreferenceManger().getString("tasks");
-                    if (allData != null) {
-                      List<TaskModel> allDataTask =
-                          (jsonDecode(allData) as List)
-                              .map((_element) => TaskModel.formJson(_element))
-                              .toList();
-                      final newIndex = allDataTask.indexWhere(
-                        (e) => e.id == hightask[index!].id,
-                      );
-                      allDataTask[newIndex] = hightask[index!];
-                      PreferenceManger().setString(
-                        "tasks",
-                        jsonEncode(allDataTask),
-                      );
-                      _loadTasks();
-                    }
-                  },
-                  EmptyMessage: "No Tasks Found",
-                  OnDelete: (int? id) {
-                    _deleteTask(id!);
-                  }, onEdit: ()=>_loadTasks(),
+              : SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: MediaQuery.of(context).size.height - 200,
+                    ),
+                    child: TasksListWiget(
+                      tasks: hightask,
+                      OnTap: (bool? value, int? index) async {
+                        setState(() {
+                          hightask[index!].isDone = value ?? false;
+                        });
+                        final updatedTask = hightask
+                            .map((element) => element.toJson())
+                            .toList();
+                        final allData = PreferenceManger().getString("tasks");
+                        if (allData != null) {
+                          List<TaskModel> allDataTask =
+                              (jsonDecode(allData) as List)
+                                  .map(
+                                    (_element) => TaskModel.formJson(_element),
+                                  )
+                                  .toList();
+                          final newIndex = allDataTask.indexWhere(
+                            (e) => e.id == hightask[index!].id,
+                          );
+                          allDataTask[newIndex] = hightask[index!];
+                          PreferenceManger().setString(
+                            "tasks",
+                            jsonEncode(allDataTask),
+                          );
+                          _loadTasks();
+                        }
+                      },
+                      EmptyMessage: "No Tasks Found",
+                      OnDelete: (int? id) {
+                        _deleteTask(id!);
+                      },
+                      onEdit: () => _loadTasks(),
+                    ),
+                  ),
                 ),
         ),
       ),
