@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Models/task_model.dart';
-import 'package:flutter_projects/Screens/high_task_screen.dart';
+import 'package:flutter_projects/features/tasks/high_task_screen.dart';
 import 'package:flutter_projects/core/themes/theme_controller.dart';
 import 'package:flutter_projects/core/widgets/custom_checkbox.dart';
 import 'package:flutter_projects/core/widgets/custom_svg_wedget.dart';

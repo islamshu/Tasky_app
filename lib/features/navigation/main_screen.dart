@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/Screens/complete_screen.dart';
-import 'package:flutter_projects/Screens/home_screen.dart';
-import 'package:flutter_projects/Screens/profile_screen.dart';
-import 'package:flutter_projects/Screens/tasks_screen.dart';
+import 'package:flutter_projects/features/tasks/complete_screen.dart';
+import 'package:flutter_projects/features/home/home_screen.dart';
+import 'package:flutter_projects/features/profile/profile_screen.dart';
+import 'package:flutter_projects/features/tasks/tasks_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MainScreen extends StatefulWidget {

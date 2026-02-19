@@ -1,9 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/Screens/main_screen.dart';
-import 'package:flutter_projects/Screens/user_detiles_screen.dart';
-import 'package:flutter_projects/Screens/welcom_screen.dart';
+import 'package:flutter_projects/features/navigation/main_screen.dart';
+import 'package:flutter_projects/features/profile/user_detiles_screen.dart';
+import 'package:flutter_projects/features/welcom/welcom_screen.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 import 'package:flutter_projects/core/themes/theme_controller.dart';
 import 'package:flutter_projects/core/widgets/custom_svg_wedget.dart';

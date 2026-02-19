@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/Screens/home_screen.dart';
-import 'package:flutter_projects/Screens/main_screen.dart';
-import 'package:flutter_projects/Screens/welcom_screen.dart';
+import 'package:flutter_projects/features/home/home_screen.dart';
+import 'package:flutter_projects/features/navigation/main_screen.dart';
+import 'package:flutter_projects/features/welcom/welcom_screen.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 import 'package:flutter_projects/core/themes/dark_theme.dart';
 import 'package:flutter_projects/core/themes/light_theme.dart';

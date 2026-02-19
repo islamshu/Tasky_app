@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Models/task_model.dart';
-import 'package:flutter_projects/Widgets/tasks_list_wiget.dart';
+import 'package:flutter_projects/core/components/tasks_list_wiget.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 
 class CompleteScreen extends StatefulWidget {

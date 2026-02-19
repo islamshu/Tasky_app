@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_projects/Screens/home_screen.dart';
-import 'package:flutter_projects/Screens/main_screen.dart';
+import 'package:flutter_projects/features/home/home_screen.dart';
+import 'package:flutter_projects/features/navigation/main_screen.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 import 'package:flutter_projects/core/widgets/custom_svg_wedget.dart';
 import 'package:flutter_projects/core/widgets/custom_text_form_filed.dart';

@@ -3,13 +3,13 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Models/task_model.dart';
-import 'package:flutter_projects/Screens/add_task.dart';
-import 'package:flutter_projects/Widgets/archieved_tasks_widget.dart';
-import 'package:flutter_projects/Widgets/high_priority_tasks_widget.dart';
-import 'package:flutter_projects/Widgets/sliver_tasks_list_wiget.dart';
-import 'package:flutter_projects/Widgets/tasks_list_wiget.dart';
+import 'package:flutter_projects/features/add_task/add_task.dart';
+
+import 'package:flutter_projects/features/home/components/sliver_tasks_list_wiget.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 import 'package:flutter_projects/core/widgets/custom_svg_wedget.dart';
+import 'package:flutter_projects/features/home/components/archieved_tasks_widget.dart';
+import 'package:flutter_projects/features/home/components/high_priority_tasks_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {

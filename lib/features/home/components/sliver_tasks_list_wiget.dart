@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/Models/task_model.dart';
-import 'package:flutter_projects/Widgets/task_item_wedget.dart';
+import 'package:flutter_projects/core/components/task_item_wedget.dart';
 import 'package:flutter_projects/core/widgets/custom_checkbox.dart';
 
 class SliverTasksListWiget extends StatelessWidget {
