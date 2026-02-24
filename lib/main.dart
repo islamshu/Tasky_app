@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           darkTheme: darkTheme,
           theme: lightTheme,
           themeMode: value,
-          home: userName == null ? WelcomScreen() : MainScreen(),
+          home: userName != null ? WelcomScreen() : MainScreen(),
         );
       },
     );

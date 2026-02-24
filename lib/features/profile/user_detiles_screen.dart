@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/core/constances/storage_key.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
 import 'package:flutter_projects/core/widgets/custom_text_form_filed.dart';
 
@@ -64,7 +65,7 @@ late final TextEditingController? pioController ;
                   child: ElevatedButton(
                     onPressed: () async {
                       if (_key.currentState?.validate() ?? false) {
-                        await PreferenceManger().setString("userName", nameController.text);
+                        await PreferenceManger().setString(StorageKey.username, nameController.text);
                         await PreferenceManger().setString("pio", pioController!.text);
                        Navigator.of(context).pop(true);
                       }

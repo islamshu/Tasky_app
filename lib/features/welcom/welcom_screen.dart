@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/core/constances/storage_key.dart';
 import 'package:flutter_projects/features/home/home_screen.dart';
 import 'package:flutter_projects/features/navigation/main_screen.dart';
 import 'package:flutter_projects/core/services/preference_manger.dart';
@@ -83,8 +84,7 @@ class WelcomScreen extends StatelessWidget {
                     onPressed: () async {
                       _key.currentState?.validate();
                       if (_key.currentState?.validate() ?? false) {
-                        await PreferenceManger().setString(
-                          'userName',
+                        await PreferenceManger().setString(StorageKey.username,
                           controller.value.text,
                         );
                         Navigator.pushReplacement(
